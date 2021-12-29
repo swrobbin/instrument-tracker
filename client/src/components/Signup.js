@@ -9,7 +9,7 @@ const Signup = () => {
     const [errorsList, setErrorsList] = useState([])
     const navigate = useNavigate()
 
-    const {signup} = useContext(UserContext);
+    const { signup } = useContext(UserContext);
   
 
     const handleSubmit = (e) => { 

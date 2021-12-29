@@ -5,7 +5,8 @@ import Home from './Home'
 import Navbar from './Navbar'
 import { UserProvider } from '../context/user';
 import Signup from './Signup' 
-import Login from './Login'
+import Login from './Login';
+import Instruments from './Instruments'
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/signup' element={<Signup/>} />
         <Route exact path='/login' element={<Login/>} />
+        <Route exact path='/instruments' element={<Instruments/>} />
       </Routes>
       </UserProvider>
     </div>
