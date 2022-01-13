@@ -17,11 +17,11 @@ const Home = () => {
     } else {
         return (
             
-             <div>
-             <h3>Please <Link to='/login'>Login</Link> into your Instrument Tracker Account.</h3>
-             <br/>
-             <h5>New to Instrument Tracker? Signup <Link to='/signup'> <em>here</em></Link></h5>
-         </div>
+            <div>
+                <h3>Please <Link to='/login'>Login</Link> into your Instrument Tracker Account.</h3>
+                <br/>
+                <h5>New to Instrument Tracker? Signup <Link to='/signup'> <em>here</em></Link></h5>
+            </div>
         )
     }
     

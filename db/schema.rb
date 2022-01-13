@@ -10,19 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_190335) do
+ActiveRecord::Schema.define(version: 2022_01_05_204622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "instruments", force: :cascade do |t|
-    t.string "brand_name"
-    t.string "model_name"
+    t.string "brand"
+    t.string "name"
     t.integer "category_id"
     t.string "description"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "instruments_setups", id: false, force: :cascade do |t|
+    t.bigint "instrument_id"
+    t.bigint "setup_id"
+    t.index ["instrument_id"], name: "index_instruments_setups_on_instrument_id"
+    t.index ["setup_id"], name: "index_instruments_setups_on_setup_id"
+  end
+
+  create_table "setups", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "setups_instruments", id: false, force: :cascade do |t|
+    t.bigint "setup_id"
+    t.bigint "instrument_id"
+    t.index ["instrument_id"], name: "index_setups_instruments_on_instrument_id"
+    t.index ["setup_id"], name: "index_setups_instruments_on_setup_id"
   end
 
   create_table "users", force: :cascade do |t|

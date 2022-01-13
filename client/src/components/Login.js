@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../context/user'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -8,6 +8,7 @@ const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [userError, setUserError] = useState('')
+    const [formFlag, setFormFlag] = useState(false)
     const navigate = useNavigate()
 
 
@@ -23,9 +24,9 @@ const Login = () => {
         })
         .then(res => res.json())
         .then((user) => {
-            
             if (user.error){
                 setUserError(user.error)
+                setFormFlag(true)
             } else {
                 login(user)
                 navigate('/')
@@ -49,6 +50,7 @@ const Login = () => {
                     <input type="submit"/>
                 </form> 
                 {userError.length > 1 ? <p style={{color:"red"}} >{userError}</p> : null}
+                {formFlag ?  <Link to={'/signup'}><button>Create an Account</button></Link> : null}
             </div>
     )
 }

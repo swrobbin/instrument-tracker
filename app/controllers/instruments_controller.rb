@@ -8,6 +8,8 @@ class InstrumentsController < ApplicationController
 
     def create
         instrument = current_user.instruments.create(instrument_params)
+        # category = instrument.create_category()
+        instrument.create_category
         if instrument.valid?
             render json: instrument
         else
@@ -20,7 +22,7 @@ class InstrumentsController < ApplicationController
         if instrument
             render json: instrument
         else
-            render json: { error: "Not Found"}, status: :unauthorized
+            render json: {error: "Not Found"}, status: :unauthorized
         end
     end
 
@@ -30,7 +32,9 @@ class InstrumentsController < ApplicationController
         if instrument.valid?
             render json: book
         else
-            render json { errors: instrument.errors.full_messages}, status: :unprocessable_entity
+            render json: { errors: instrument.errors.full_messages}, status: :unprocessable_entity
+    
+        end
     end
 
     def destroy
@@ -44,10 +48,13 @@ class InstrumentsController < ApplicationController
     end
 
     def instrument_params
-        params.permit(:brand_name, :model_name, :description)
+        # binding.pry
+        params.require(:instrument).permit(:brand, :name, :description, :category_id)
+        # category_attributes: [:name]
     end
 
     def authorize
         return render json: {error: "Not authorized"}, status: :unauthorized unless session.include? :user_id
     end
+
 end

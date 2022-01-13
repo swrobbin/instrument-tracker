@@ -1,5 +1,14 @@
 class Instrument < ApplicationRecord
-    validates :model_name, :brand_name, :description, presence: true
+    validates :name, :brand, :description, presence: true
+     
     belongs_to :user 
+    belongs_to :category 
+    has_and_belongs_to_many :setups
+
+    accepts_nested_attributes_for :category, reject_if: :all_blank
+
+    # def category_attributes=(attributes)
+    #     binding.pry
+    # end
     
 end

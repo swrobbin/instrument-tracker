@@ -3,7 +3,7 @@ import { UserContext } from '../context/user';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const { user, logout, loggedIn } = useContext(UserContext)
+    const { logout, loggedIn } = useContext(UserContext)
     const navigate = useNavigate()
 
     const logoutUser = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
                     Home   
                 </Link>
                 <Link to='/instruments' style={{ textDecoration: 'none' }}>
-                    Instruments   
+                     Instruments   
                 </Link>
                 <button  className="button" onClick={logoutUser}>Logout</button>
             </div>
