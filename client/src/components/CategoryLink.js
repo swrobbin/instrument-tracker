@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+// import { UserContext } from '../context/user';
+
 
 
 const CategoryLink = ({category}) => {
@@ -9,7 +11,7 @@ const CategoryLink = ({category}) => {
         <div>
            <Link to={`/categories/${category.id}`} className="each-category-link" >
                 <br/>
-                <h1>{category.name}</h1>
+                <h3>{category.name}</h3>
                 <br/>
             </Link> 
         </div>

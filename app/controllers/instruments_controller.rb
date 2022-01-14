@@ -8,8 +8,6 @@ class InstrumentsController < ApplicationController
 
     def create
         instrument = current_user.instruments.create(instrument_params)
-        # category = instrument.create_category()
-        instrument.create_category
         if instrument.valid?
             render json: instrument
         else
@@ -28,9 +26,18 @@ class InstrumentsController < ApplicationController
 
     def update
         instrument = current_user.instruments.find_by(id: params[:id])
-        instrument.update(instrument_params)
+        instrument.update(name: params[:name], brand: params[:brand], description: params[:description] )
+
+         if params[:category_attributes]
+            c = Category.create(name: params[:category_attributes][:name])
+            instrument.category_id = c.id
+         else
+            instrument.category_id = params[:category_id]
+         end
+         instrument.save
+        # binding.pry
         if instrument.valid?
-            render json: book
+            render json: instrument
         else
             render json: { errors: instrument.errors.full_messages}, status: :unprocessable_entity
     
@@ -39,7 +46,7 @@ class InstrumentsController < ApplicationController
 
     def destroy
         instrument = current_user.instruments.find_by(id: params[:id])
-        current_user.books.destroy(instrument)
+        current_user.instruments.destroy(instrument)
     end
 
     private
@@ -48,9 +55,7 @@ class InstrumentsController < ApplicationController
     end
 
     def instrument_params
-        # binding.pry
-        params.require(:instrument).permit(:brand, :name, :description, :category_id)
-        # category_attributes: [:name]
+        params.require(:instrument).permit(:brand, :name, :description, :category_id, category_attributes: [:name])
     end
 
     def authorize

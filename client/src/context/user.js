@@ -18,13 +18,13 @@ function UserProvider({ children }) {
             // console.log(data, "from /me fetch")
             if (data.error){
                 setLoggedIn(false)
+                // setLoggedIn(true)
             } else {
-                setLoggedIn(true)
                 fetchInstruments()
                 fetchCategories()
+                // debugger
+                setLoggedIn(true)
             }
-            
-            
         })
     }, [])
 
@@ -35,6 +35,7 @@ const fetchInstruments = () => {
         // console.log(data)
         setInstruments(data)
     })
+    
 }
 const fetchCategories = () => {
     fetch('/categories')
@@ -43,9 +44,11 @@ const fetchCategories = () => {
         // console.log(data)
         setCategories(data)
     })
+    // .then(setLoggedIn(true))
 }
 
 const addInstrument = (instrument) => {
+    const localInstrument = instrument.instrument.category_attributes.name
     fetch('/instruments', {
         method: "POST",
         headers: { 'Content-Type' : 'application/json'},
@@ -55,7 +58,40 @@ const addInstrument = (instrument) => {
     .then(data => {
         console.log(data)
         setInstruments([...instruments, data])
+        if (localInstrument){
+            setCategories([...categories, {id: data.category_id, name:localInstrument}])
+        } 
+        
     })
+}
+const onDelete = (id) => {
+    fetch(`/instruments/${id}`, 
+        {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"}   
+        })
+        .then(() => {
+            const instrument = instruments.find((i) => i.id === parseInt(id))
+            const updatedInstruments = instruments.filter(i => i.id !== parseInt(instrument.id))
+            setInstruments(updatedInstruments)
+        })
+}
+
+const onUpdate = (editedInstrument) => {
+    const editedInstruments = instruments;
+    const updatedInstruments = editedInstruments.map((instrument) => {
+        if (instrument.id !== editedInstrument.id){
+            return instrument
+        } else {
+            return editedInstrument
+        }
+    })
+    setInstruments(updatedInstruments)
+}
+
+const addCategory = (newCategory) => {
+    setCategories([...categories, newCategory])
 }
 
 const login = (user) => {
@@ -72,7 +108,7 @@ const signup = (user) => {
 }
 
 return (
-    <UserContext.Provider value={{user, categories, login, logout, signup, loggedIn, instruments, addInstrument}}>
+    <UserContext.Provider value={{onUpdate, onDelete, addCategory, user, categories, login, logout, signup, loggedIn, instruments, addInstrument}}>
         {children}
     </UserContext.Provider>
 )

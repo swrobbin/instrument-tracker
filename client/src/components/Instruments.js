@@ -33,7 +33,7 @@ const Instruments = () => {
         return (
             <div>
                 <h3>Not authorized!</h3>
-                <p> Login to see your Instruments</p>
+                <p> <Link to={'/login'}> <button>Login</button></Link> to see your Instruments</p>
             </div>
         )
     }

@@ -20,6 +20,7 @@ const Navbar = () => {
     if (loggedIn) {
         return (
             <div>
+                <h2>Instrument Tracker</h2>
                 <br/>
                 <br/>
                 <Link to='/'  style={{ textDecoration: 'none', padding: "10px" }}>

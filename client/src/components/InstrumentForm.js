@@ -18,11 +18,12 @@ const InstrumentForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addInstrument({
-            name: name,
+        addInstrument({ instrument:
+            {name: name,
             brand: brand, 
             description: description,
-            categoryId: categoryId
+            category_id: categoryId,
+            category_attributes: {name: categoryName}}
             // category_attributes: [{name: categoryName}]
               
         })
@@ -61,7 +62,7 @@ const InstrumentForm = () => {
                 <br/>
                 <label>New Category Name:</label>
                 <br/>
-                {/* <input type="text" id="categoryName" value={categoryName} onChange={(e) => setCategoryName(e.target.value)} /> */}
+                <input type="text" id="categoryName" value={categoryName} onChange={(e) => setCategoryName(e.target.value)} />
                 <br/>
                 <br/>
                 <label >Categories:</label>

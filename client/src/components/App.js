@@ -9,6 +9,9 @@ import Login from './Login';
 import Instruments from './Instruments'
 import InstrumentForm from './InstrumentForm';
 import Categories from './Categories';
+import Category from './Category';
+import Instrument from './Instrument'
+import InstrumentEditForm from './InstrumentEditForm';
 
 
 
@@ -22,7 +25,10 @@ function App() {
         <Route exact path='/signup' element={<Signup/>} />
         <Route exact path='/login' element={<Login/>} />
         <Route exact path='/instruments' element={<Instruments/>} />
+        <Route exact path='/instruments/:id' element={<Instrument/>} />
         <Route exact path='/categories' element={<Categories/>} />
+        <Route exact path='/categories/:id' element={<Category/>} />
+        <Route exact path='/instruments/:id/edit' element={<InstrumentEditForm/>}/>
         <Route exact path='/instruments/new' element={<InstrumentForm/>} />
       </Routes>
       </UserProvider>
