@@ -30,6 +30,7 @@ const Instrument = (props) => {
                 <br/>
                 <p>Category: {filteredCategory[0].name}</p>
                 <br/>
+                {/* <img src={instrument.image} alt="instr"/> */}
                 <br/>
                 <h3>Description</h3>
                 <p>{instrument.description}</p>

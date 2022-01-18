@@ -7,11 +7,12 @@ const Home = () => {
     const { user, loggedIn, categories } = useContext(UserContext)
     const list = categories.map((c) => {
         return (
-            <CategoryLink category={c}/>
+            <CategoryLink  key={c.id} category={c}/>
         )
     })
 
-    if (loggedIn){
+
+    if (loggedIn && user.username !== ''){
         return(
             <div>
             <p>{user.username}</p>

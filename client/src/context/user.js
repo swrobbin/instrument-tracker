@@ -15,14 +15,12 @@ function UserProvider({ children }) {
         .then(res => res.json())
         .then(data => {
             setUser(data)
-            // console.log(data, "from /me fetch")
             if (data.error){
                 setLoggedIn(false)
                 // setLoggedIn(true)
             } else {
                 fetchInstruments()
                 fetchCategories()
-                // debugger
                 setLoggedIn(true)
             }
         })
@@ -32,7 +30,6 @@ const fetchInstruments = () => {
     fetch('/instruments')
     .then(res => res.json())
     .then(data => {
-        // console.log(data)
         setInstruments(data)
     })
     
@@ -41,10 +38,8 @@ const fetchCategories = () => {
     fetch('/categories')
     .then(res => res.json())
     .then(data => {
-        // console.log(data)
         setCategories(data)
     })
-    // .then(setLoggedIn(true))
 }
 
 const addInstrument = (instrument) => {

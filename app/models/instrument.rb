@@ -7,8 +7,5 @@ class Instrument < ApplicationRecord
 
     accepts_nested_attributes_for :category, reject_if: :all_blank
 
-    # def category_attributes=(attributes)
-    #     binding.pry
-    # end
     
 end

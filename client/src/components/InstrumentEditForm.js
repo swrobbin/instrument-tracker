@@ -6,21 +6,13 @@ const InstrumentEditForm = () => {
     const {loggedIn, instruments, onUpdate, categories } = useContext(UserContext)
     const { id } = useParams();
     const navigate = useNavigate();
-    const [editedInstrument, setEditedInstrument] = useState({})
-    // const [editedInstrument, setEditedInstrument] = useState({
-    //     name: '',
-    //     brand: '', 
-    //     description: '',
-    //     category_id:'', 
-    //     category_attributes: {name: ''}
-    // })
+    const [editedInstrument, setEditedInstrument] = useState("test")
+    
         
     useEffect(() => {
             const instrumentToEdit = instruments.find((i) => i.id === parseInt(id))
-            // debugger
-            // console.log(instrumentToEdit)
             setEditedInstrument(instrumentToEdit);
-    }, [instruments, categories, id])
+    }, [instruments, categories, id, editedInstrument])
  
     const handleChange = (e) => {
         if (e.target.name === "categoryName"){
@@ -45,14 +37,13 @@ const InstrumentEditForm = () => {
         })
         .then(r => r.json())
         .then(data => {
-            console.log(data, "update")
             onUpdate(data)
             navigate(`/instruments/${id}`)
         })
     }
    
     
-    if(loggedIn && instruments.length > 0 && categories.length > 0){
+    if(loggedIn && editedInstrument){
         const optionsList = categories.map((c) => {
             return (<option key={c.id} value={c.id}>{c.name}</option>)
             })

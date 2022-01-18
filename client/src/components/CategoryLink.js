@@ -11,7 +11,7 @@ const CategoryLink = ({category}) => {
         <div>
            <Link to={`/categories/${category.id}`} className="each-category-link" >
                 <br/>
-                <h3>{category.name}</h3>
+                <h3>{category.name}s</h3>
                 <br/>
             </Link> 
         </div>
