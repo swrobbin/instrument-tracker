@@ -9,9 +9,6 @@ const Instrument = (props) => {
     const { loggedIn, instruments, categories, onDelete } = useContext(UserContext)
     let { id } = useParams();
     let navigate = useNavigate();
-    // debugger
-    // const instrument = instruments.find(i => i.id === parseInt(id))
-    // const filteredCategory = categories.filter(c => c.id === instrument.category_id)
     
     const handleDelete = (e) => {
         onDelete(e.target.id) 
@@ -30,7 +27,6 @@ const Instrument = (props) => {
                 <br/>
                 <p>Category: {filteredCategory[0].name}</p>
                 <br/>
-                {/* <img src={instrument.image} alt="instr"/> */}
                 <br/>
                 <h3>Description</h3>
                 <p>{instrument.description}</p>

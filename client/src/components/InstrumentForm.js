@@ -6,13 +6,11 @@ import { Link } from 'react-router-dom';
 
 const InstrumentForm = () => {
     const { addInstrument, loggedIn, categories } = useContext(UserContext);
-    // debugger
     const [name, setName] = useState('')
     const [brand, setBrand] = useState('')
     const [description, setDescription] = useState('')
     const [categoryId, setCategoryId] = useState('')
     const [categoryName, setCategoryName] = useState('')
-    // const [image, setImage] = useState('')
     const navigate = useNavigate()
 
 
@@ -23,17 +21,14 @@ const InstrumentForm = () => {
             {name: name,
             brand: brand, 
             description: description,
-            // image: image,
             category_id: categoryId,
             category_attributes: {name: categoryName}}
-            // category_attributes: [{name: categoryName}]
-              
         })
         navigate('/instruments')
     }
 
     const optionsList = categories.map((c) => {
-        return (<option key={c.id} value={c.id}>{c.name}</option>)
+        return (<option className="dropdown-content" key={c.id} value={c.id}>{c.name}</option>)
         })
 
     if(loggedIn){
@@ -59,8 +54,6 @@ const InstrumentForm = () => {
                 <br/>
                 <textarea type="text" id="description" rows="10" cols="50" value={description}  onChange={(e) => setDescription(e.target.value)}/>
                 <br/>
-                <br/>
-                {/* <input type="file" value={image} id="image" accept="image/*" multiple={false} onChange={(e) => setImage(e.target.value)} /> */}
                 <br/>
                 <br/>
                 <h3>Choose from existing instrument categories or create a new category below:</h3>

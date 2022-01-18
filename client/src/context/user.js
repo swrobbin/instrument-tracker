@@ -51,7 +51,7 @@ const addInstrument = (instrument) => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         setInstruments([...instruments, data])
         if (localInstrument){
             setCategories([...categories, {id: data.category_id, name:localInstrument}])

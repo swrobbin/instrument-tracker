@@ -26,7 +26,7 @@ class InstrumentsController < ApplicationController
 
     def update
         instrument = current_user.instruments.find_by(id: params[:id])
-        instrument.update(name: params[:name], brand: params[:brand], description: params[:description] )
+        instrument.update(name: params[:name], brand: params[:brand],  description: params[:description] )
 
          if params[:category_attributes]
             c = Category.create(name: params[:category_attributes][:name])

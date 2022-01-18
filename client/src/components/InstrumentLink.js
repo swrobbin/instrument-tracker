@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 
 const InstrumentLink = ({instrument}) => {
     return (
-        <div>
-            <Link to={`/instruments/${instrument.id}`} className="each-instrument-link" >
-            {/* <br/> */}
+        <div >
+            <Link to={`/instruments/${instrument.id}`}  >
             <h4>{instrument.brand} - {instrument.name}</h4>
-            {/* <br/> */}
             </Link>
         </div>
+        // className="instrument-link"
     )
 }
 
