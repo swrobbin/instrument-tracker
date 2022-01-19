@@ -17,10 +17,9 @@ function UserProvider({ children }) {
             setUser(data)
             if (data.error){
                 setLoggedIn(false)
-                // setLoggedIn(true)
             } else {
-                fetchInstruments()
                 fetchCategories()
+                fetchInstruments()
                 setLoggedIn(true)
             }
         })
@@ -51,12 +50,10 @@ const addInstrument = (instrument) => {
     })
     .then(res => res.json())
     .then(data => {
-        // console.log(data)
         setInstruments([...instruments, data])
         if (localInstrument){
             setCategories([...categories, {id: data.category_id, name:localInstrument}])
-        } 
-        
+        }  
     })
 }
 const onDelete = (id) => {
@@ -94,8 +91,8 @@ const login = (user) => {
     setLoggedIn(true)
 }
 const logout = () => {
-    setUser(null)
     setLoggedIn(false)
+    setUser(null)
 }
 const signup = (user) => {
     setUser(user)

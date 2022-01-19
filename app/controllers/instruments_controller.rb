@@ -35,7 +35,6 @@ class InstrumentsController < ApplicationController
             instrument.category_id = params[:category_id]
          end
          instrument.save
-        # binding.pry
         if instrument.valid?
             render json: instrument
         else

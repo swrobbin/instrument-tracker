@@ -19,7 +19,7 @@ const Instruments = () => {
 
     const list = filteredInstruments.map((instrument) => {
         return (
-         <div className="instrument-link">
+         <div key={instrument.id} className="instrument-link">
          <InstrumentLink key={instrument.id} instrument={instrument}/>
          </div>
         ) 

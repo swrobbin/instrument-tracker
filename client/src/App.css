@@ -45,11 +45,12 @@ input[type=text] {
   border-style: solid;
   height: 100px;
   padding: 12px 20px;
+  /* width: 20%; */
 }
 textarea[type=text] {
   width: 40%;
   padding: 12px 20px;
-  height: 100px;
+  height: 60px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;

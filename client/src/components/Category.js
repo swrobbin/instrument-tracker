@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState }  from 'react'
+import React, {useContext, useEffect, useState }  from 'react';
 import { UserContext } from '../context/user';
 import {useParams } from "react-router-dom"
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const Category = (props) => {
     let { id } = useParams();
     const categoryInstrumentList = instrumentsToRender.map((instrument) => {
         return (
-         <div className="instrument-link">
+         <div key={instrument.id} className="instrument-link">
          <InstrumentLink key={instrument.id} instrument={instrument}/>
          </div>
         ) 
@@ -23,19 +23,21 @@ const Category = (props) => {
      useEffect(() => {
         const category = categories.find(c => c.id === parseInt(id));
         setCatToRender(category);
-        const filteredInstruments = instruments.filter(i => i.category_id === catToRender.id )
+        const filteredInstruments = instruments.filter(i => i.category_id === catToRender.id);
         setInstrumentsToRender(filteredInstruments)
-     }, [loggedIn, categories, id, catToRender, instruments])
+     }, [loggedIn, categories, catToRender, id, instruments])
 
-    if(loggedIn && catToRender && instruments){
+
+    if(loggedIn && catToRender && instruments && categories && catToRender !== ''){
         return (
             <div>
                 <br/>
                 <br/>
                 <br/>
                 <h2>{catToRender.name}</h2>
-                <Link to={'/instruments/new'} > <button>Add A New Instrument</button> </Link>
-
+                <Link to={'/instruments/new'}> 
+                    <button>Add A New Instrument</button> 
+                </Link>
                 {categoryInstrumentList}
             </div>
         )
