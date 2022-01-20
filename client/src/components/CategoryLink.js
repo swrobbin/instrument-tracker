@@ -7,7 +7,7 @@ const CategoryLink = ({category}) => {
     return (
         <div>
            <Link to={`/categories/${category.id}`}  >
-                <div >
+                <div className="category-link">
                 <h3>{category.name}s</h3>
                 <br/>
                 </div>

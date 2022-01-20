@@ -7,7 +7,7 @@ const InstrumentEditLink = ({instrument}) => {
         <div>
             <br/>
                 <Link to={`/instruments/${instrument.id}/edit`}>
-                   <button className='button'>Edit</button> 
+                   <button className='edit-button'>Edit</button> 
                 </Link>
             <br/> 
         </div>

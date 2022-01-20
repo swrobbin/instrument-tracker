@@ -7,7 +7,7 @@ const Home = () => {
     const { user, loggedIn, categories } = useContext(UserContext)
     const list = categories.map((c) => {
             return (
-                <div className="">
+                <div className="cat-link">
                     <CategoryLink  key={c.id} category={c}/>
                 </div>
             )   
@@ -18,20 +18,19 @@ const Home = () => {
         return(
             <div>
             <br/>
-            <h2>Welcome to Instrument Tracker!</h2>
+            
             <br/>
             <div className="home-content">
-            <p>This is a resource to help you keep track of all of your instruments, all in one place.</p>
-            <p>If your collection is </p>
-            <br/>
-            <p>Get started by clicking on the Instruments tab above to add and view your instruments.</p>
+            <h2 id="home-header">Welcome to Instrument Tracker!</h2>
+            <p>This is a resource to help you keep track of your musical instruments, all in one place.</p>
+            <p>Use this page to create an inventory of all of your instruments, using the categories that have been already created, or create your own. </p>
+            {/* <br/> */}
+            <p>Get started by clicking on the Instruments tab above to add and view your instruments!</p>
             <br/>
             </div>
-            {/* <p>Click on a category below to view your instruments </p> */}
             <br/>
-            
             <div className="categories">
-            <h3>Instrument Categories: </h3>
+            <h3 id="home-header">Instrument Categories: </h3>
             <br/>
                 {list}
             </div>

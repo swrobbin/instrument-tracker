@@ -21,22 +21,29 @@ const Instrument = (props) => {
     
         return (
             <div>
-                <h2>Model: {instrument.name}</h2>
-                <br/>
-                <p>Brand: {instrument.brand}</p>
-                <br/>
-                <p>Category: {filteredCategory[0].name}</p>
                 <br/>
                 <br/>
-                <h3>Description</h3>
+                <br/>
+                <br/>
+                <br/>
+                <h2 id='instrument-header'>{instrument.brand} {instrument.name}</h2>
+                <br/>
+                <br/>
+                <h4 id='instrument-category-header'> Category: {filteredCategory[0].name}s</h4>
+                <br/>
+                <br/>
+                {/* <h3>Description</h3> */}
                 <p className="instrument_description">{instrument.description}</p>
                 <br/>
                 <br/>
                 <br/>
                 <br/>
+                <button><Link to='/instruments'>Back To All Instruments</Link></button> 
+                <br/>
+                <br/>
                 <InstrumentEditLink instrument={instrument} />
                 <br/>
-                <button  className="button" id={instrument.id} onClick={handleDelete}>Delete</button> 
+                <button  className="delete-button" id={instrument.id} onClick={handleDelete}>Delete</button> 
             </div>
         )
     } else {

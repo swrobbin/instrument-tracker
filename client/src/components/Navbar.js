@@ -19,17 +19,22 @@ const Navbar = () => {
 
     if (loggedIn) {
         return (
-            <div>
-                <h2 className="title">Instrument Tracker</h2>
+            <div className="navbar">
+                <h2 className="title" id="logo">Instrument Tracker</h2>
                 <br/>
                 <br/>
-                <Link to='/'  style={{ textDecoration: 'none', padding: "10px" }}>
-                    Home   
-                </Link>
-                <Link to='/instruments' style={{ textDecoration: 'none' }}>
-                     Instruments   
-                </Link>
-                <button  className="button" onClick={logoutUser}>Logout</button>
+                <div id="navs"><strong>
+                    <Link to='/'  style={{ textDecoration: 'none', padding: "40px"  }}>
+                        Home   
+                    </Link>
+                    
+                    <Link to='/instruments' style={{ fontWeight: "bold", textDecoration: 'none', padding: "30px" }}>
+                        Instruments   
+                    </Link>
+                    <button  id='add-button' className="button" onClick={logoutUser}>Logout</button>
+                    </strong>
+                </div>
+                
             </div>
         )
     } else {

@@ -48,7 +48,7 @@ const InstrumentEditForm = () => {
             return (<option key={c.id} value={c.id}>{c.name}</option>)
             })
         return (
-            <div>
+            <div id='edit-form'>
                 <p>Edit Instrument Below</p>
                 <form onSubmit={handleSubmit}>
                 <label>Model Name</label>

@@ -20,7 +20,7 @@ const Instruments = () => {
 
     const list = filteredInstruments.map((instrument) => {
         return (
-         <div key={instrument.id} className="instrument-link">
+         <div key={instrument.id} id="instrument-link">
          <InstrumentLink key={instrument.id} instrument={instrument}/>
          </div>
         ) 
@@ -35,8 +35,8 @@ const Instruments = () => {
                 <br/>
                 <br/>
                 <br/>
-                <h2>Instruments</h2>
-                <Link to={'/instruments/new'} > <button>Add A New Instrument</button> </Link>
+                <h2 id='instrument-header'>Instruments</h2>
+                <Link to={'/instruments/new'} > <button id='add-button'>Add New Instrument</button> </Link>
                 <br/>
                 <br/>
                 <br/>
@@ -44,13 +44,9 @@ const Instruments = () => {
                 <br/>
                 <br/>
                 <br/>
-
-
                 <div className="grid-container">
                 {list}
                 </div>
-
-
             </div>
         )
     } else {
