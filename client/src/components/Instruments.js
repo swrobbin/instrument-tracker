@@ -10,7 +10,8 @@ const Instruments = () => {
     const filteredInstruments = instruments.filter(instrument => {
         if (search === ''){
             return instrument
-        } else if (instrument.name.toLowerCase().includes(search.toLowerCase()) || instrument.brand.toLowerCase().includes(search.toLowerCase())){
+        } else if (instrument.name.toLowerCase().includes(search.toLowerCase()) || 
+                instrument.brand.toLowerCase().includes(search.toLowerCase())){
             return instrument
         } else {
            return null}
@@ -25,6 +26,8 @@ const Instruments = () => {
         ) 
      })
 
+     
+
 
     if(loggedIn){
         return (
@@ -37,13 +40,17 @@ const Instruments = () => {
                 <br/>
                 <br/>
                 <br/>
-                <input type="text/" placeholder="Search Instruments..." id="search" value={search} onChange={event => setSearch(event.target.value)}/>
+                <input id="search" type="text" placeholder="Search Instruments..." value={search} onChange={event => setSearch(event.target.value)}/>
                 <br/>
                 <br/>
                 <br/>
+
+
                 <div className="grid-container">
                 {list}
                 </div>
+
+
             </div>
         )
     } else {

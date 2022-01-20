@@ -7,7 +7,9 @@ const Home = () => {
     const { user, loggedIn, categories } = useContext(UserContext)
     const list = categories.map((c) => {
             return (
-                <CategoryLink className="grid-item" key={c.id} category={c}/>
+                <div className="">
+                    <CategoryLink  key={c.id} category={c}/>
+                </div>
             )   
     })
 
@@ -15,16 +17,22 @@ const Home = () => {
     if (loggedIn && user.username !== ''){
         return(
             <div>
+            <br/>
             <h2>Welcome to Instrument Tracker!</h2>
             <br/>
-            <p>This is a resource to help you keep track of all of your instruments - in one place.</p>
+            <div className="home-content">
+            <p>This is a resource to help you keep track of all of your instruments, all in one place.</p>
+            <p>If your collection is </p>
             <br/>
-            <p>Click on the Instruments tab above to add and view your instruments.</p>
+            <p>Get started by clicking on the Instruments tab above to add and view your instruments.</p>
             <br/>
+            </div>
             {/* <p>Click on a category below to view your instruments </p> */}
             <br/>
+            
+            <div className="categories">
             <h3>Instrument Categories: </h3>
-            <div className="grid-container">
+            <br/>
                 {list}
             </div>
             </div>

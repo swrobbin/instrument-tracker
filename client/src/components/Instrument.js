@@ -29,12 +29,13 @@ const Instrument = (props) => {
                 <br/>
                 <br/>
                 <h3>Description</h3>
-                <p>{instrument.description}</p>
+                <p className="instrument_description">{instrument.description}</p>
                 <br/>
                 <br/>
                 <br/>
                 <br/>
                 <InstrumentEditLink instrument={instrument} />
+                <br/>
                 <button  className="button" id={instrument.id} onClick={handleDelete}>Delete</button> 
             </div>
         )
