@@ -27,10 +27,6 @@
   color: rgb(101, 198, 165);
 }
 
-
-.App-link {
-  color: #61dafb;
-}
 .button{
   position: absolute;
   right: 150px;
@@ -40,8 +36,11 @@
   padding: 5px;
 
 }
+#cat{
+  height: 1500px;
+}
 .categories{
-  width: 300px;
+  width: 500px;
   border: 3px solid  rgb(101, 198, 165);
   border-radius: 5px;
   padding: 50px;
@@ -50,6 +49,7 @@
   right: 150px;
   top: 200px;
   outline-style: solid;
+  background: rgb(34, 47, 52, 0.7);
 }
 /* .category-link{
   border-style: solid;
@@ -60,6 +60,7 @@
   padding: 12px 20px;
   background: rgb(34, 47, 52, 0.7);
 } */
+
 #edit-form{
   height: 1000px;
 }
@@ -90,11 +91,18 @@
   top: 200px;
   font-size: 35px;
   outline-style: solid;
-}
+  background-color: rgb(34, 47, 52, 0.7);
 
+}
+#home{
+  background-color: rgb(34, 47, 52, 0.7);
+  height: 2000px;
+
+}
 #home-header{
   font-family: 'Playfair Display', serif;
   font-size: 25px;
+  background-color: rgb(34, 47, 52, 0.7);
 }
 .instrument_description{
   border: 3px solid  rgb(101, 198, 165);
@@ -115,7 +123,7 @@ input[type=text] {
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid rgb(22, 22, 22);
+  border-bottom: 2px solid rgb(101, 198, 165);
 }
 #instrument-category-header{
   font-family: 'Playfair Display', serif;
@@ -143,13 +151,15 @@ input[type=text] {
 #instrument-link:hover{
   color: rgb(101, 198, 165);
 }
+.login{
+  height: 1000px;
+}
 #navs{
   font-family: 'Playfair Display', serif;
   font-size: 5px;
   margin-top: 50px;
   margin-left: 100px;
   padding: 12px 20px;
-
 }
 #navs:hover{
   color: rgb(101, 198, 165);
@@ -157,7 +167,7 @@ input[type=text] {
 }
 
 .navbar{
-  height: 120px;
+  /* height: 120px; */
   font-family: 'Playfair Display', serif;
   font-size: 5px;
 }
@@ -168,7 +178,7 @@ textarea[type=text] {
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid rgb(22, 22, 22);
+  border-bottom: 2px solid rgb(101, 198, 165);
 }
 input[type=password]{
   width: 15%;
@@ -177,7 +187,7 @@ input[type=password]{
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid rgb(22, 22, 22);
+  border-bottom: 2px solid rgb(101, 198, 165);
 }
 #search{
   width: 25%;

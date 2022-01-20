@@ -33,7 +33,7 @@ const InstrumentForm = () => {
 
     if(loggedIn){
         return (
-            <div>
+            <div id='home'>
                 <br/>
             <p>Add a new instrument to your collection:</p>
             <br/>
@@ -71,7 +71,7 @@ const InstrumentForm = () => {
                 </select>
                 <br/>
                 <br/>
-                <input type="submit"/>
+                <input id='add-button' type="submit"/>
             </form>
             </div>
         ) 

@@ -14,7 +14,7 @@ const Category = (props) => {
     let { id } = useParams();
     const categoryInstrumentList = instrumentsToRender.map((instrument) => {
         return (
-         <div key={instrument.id} className="instrument-link">
+         <div key={instrument.id} id="instrument-link">
          <InstrumentLink key={instrument.id} instrument={instrument}/>
          </div>
         ) 
@@ -30,15 +30,23 @@ const Category = (props) => {
 
     if(loggedIn && catToRender && instruments && categories && catToRender !== ''){
         return (
-            <div>
+            <div id='cat'>
                 <br/>
                 <br/>
                 <br/>
-                <h2>{catToRender.name}</h2>
-                <Link to={'/instruments/new'}> 
-                    <button>Add A New Instrument</button> 
-                </Link>
+                <h2 id='instrument-header'>{catToRender.name}s</h2>
+                
+                <div className="grid-container">
                 {categoryInstrumentList}
+                </div>
+                <Link to={'/'}> 
+                    <button id='add-button'>Back to Categories</button> 
+                </Link>
+                <br/>
+                <br/>
+                <Link to={'/instruments/new'}> 
+                    <button id='add-button'>Add A New Instrument</button> 
+                </Link>
             </div>
         )
     } else {
