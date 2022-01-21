@@ -199,6 +199,10 @@ input[type=password]{
 #search{
   width: 25%;
 }
+#signup{
+  background-color: rgb(34, 47, 52, 0.7);
+  height: 2000px;
+}
 .title{
   position: absolute;
   top: 10px;
