@@ -104,6 +104,13 @@
   font-size: 25px;
   background-color: rgb(34, 47, 52, 0.7);
 }
+#home-login{
+  background-color: rgb(34, 47, 52, 0.7);
+  height: 2000px;
+}
+#instrument{
+  /* height: 2000px; */
+}
 .instrument_description{
   border: 3px solid  rgb(101, 198, 165);
   border-radius: 5px;

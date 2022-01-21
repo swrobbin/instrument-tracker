@@ -24,11 +24,11 @@ const Navbar = () => {
                 <br/>
                 <br/>
                 <div id="navs"><strong>
-                    <Link to='/'  style={{ textDecoration: 'none', padding: "40px"  }}>
+                    <Link to='/'  style={{  fontSize: '30px', textDecoration: 'none', padding: "40px"  }}>
                         Home   
                     </Link>
                     
-                    <Link to='/instruments' style={{ fontWeight: "bold", textDecoration: 'none', padding: "30px" }}>
+                    <Link to='/instruments' style={{ fontSize: '30px', fontWeight: "bold", textDecoration: 'none', padding: "30px" }}>
                         Instruments   
                     </Link>
                     <button  id='add-button' className="button" onClick={logoutUser}>Logout</button>

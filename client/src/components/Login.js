@@ -47,7 +47,7 @@ const Login = () => {
                     <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <br/>
                     <br/>
-                    <input type="submit"/>
+                    <input id='add-button' type="submit"/>
                 </form> 
                 {userError.length > 1 ? <p style={{color:"red"}} >{userError}</p> : null}
                 {formFlag ?  <Link to={'/signup'}><button>Create an Account</button></Link> : null}

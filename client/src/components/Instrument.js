@@ -20,7 +20,7 @@ const Instrument = (props) => {
         const filteredCategory = categories.filter(c => c.id === instrument.category_id)
     
         return (
-            <div>
+            <div id='instrument'>
                 <br/>
                 <br/>
                 <br/>
@@ -44,6 +44,7 @@ const Instrument = (props) => {
                 <InstrumentEditLink instrument={instrument} />
                 <br/>
                 <button  className="delete-button" id={instrument.id} onClick={handleDelete}>Delete</button> 
+                <br/>
             </div>
         )
     } else {
