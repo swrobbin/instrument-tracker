@@ -1,13 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../context/user';
 import { Link } from 'react-router-dom';
 import CategoryLink from './CategoryLink';
 
 const Home = () => {
     const { user, loggedIn, categories } = useContext(UserContext)
-    const [categoriesToRender, setCategoriesToRender] = useState([])
+    // const [categoriesToRender, setCategoriesToRender] = useState([])
     
-    useEffect(() => {
+    // useEffect(() => {
+    //     const list = categories.map((c) => {
+    //         return (
+    //             <div key={c.id} className="cat-link">
+    //                 <br/>
+    //                 <CategoryLink  key={c.id} category={c}/>
+    //             </div>
+    //         )   
+    //      })
+    //      setCategoriesToRender(list)
+    // }, [categories])
+
+    if (loggedIn && user.username !== '' && categories){
         const list = categories.map((c) => {
             return (
                 <div key={c.id} className="cat-link">
@@ -16,10 +28,7 @@ const Home = () => {
                 </div>
             )   
          })
-         setCategoriesToRender(list)
-    }, [categories])
 
-    if (loggedIn && user.username !== '' && categories){
         return(
             <div id='home'>
             <br/>
@@ -35,7 +44,7 @@ const Home = () => {
             <div className="categories">
             <h3 id="home-header">Instrument Categories: </h3>
             <br/>
-                {categoriesToRender}
+                {list}
             </div>
             </div>
             
