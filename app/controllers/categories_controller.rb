@@ -2,8 +2,7 @@ class CategoriesController < ApplicationController
 
 
     def index
-        categories = Category.all
-        # users_categories = current_user.categories.uniq
+        categories = current_user.categories.uniq
         render json: categories 
     end
 

@@ -99,6 +99,8 @@ const logout = () => {
 }
 const signup = (user) => {
     setUser(user)
+    fetchCategories()
+    fetchInstruments()
     setLoggedIn(true)
 }
 

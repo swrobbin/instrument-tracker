@@ -40,7 +40,7 @@ const Navbar = () => {
     } else {
         return (
             <div>
-               <h1>Instrument Tracker</h1>
+               <h1 id="logo">Instrument Tracker</h1>
             </div>
         )
     }

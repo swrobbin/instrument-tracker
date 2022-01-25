@@ -45,7 +45,8 @@ const Home = () => {
             <div id="home-login">
                 <h3>Please  <button><Link to='/login'>Login</Link></button> into your Instrument Tracker Account.</h3>
                 <br/>
-                <h5>New to Instrument Tracker? Signup <Link to='/signup'> <em>here</em></Link></h5>
+                <h5>New to Instrument Tracker? </h5>
+                <h5>Create a new account <button><Link to='/signup'>here!</Link></button> </h5>
             </div>
         )
     }
