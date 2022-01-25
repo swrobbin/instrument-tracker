@@ -5,21 +5,11 @@ import CategoryLink from './CategoryLink';
 
 const Home = () => {
     const { user, loggedIn, categories } = useContext(UserContext)
-    // const [categoriesToRender, setCategoriesToRender] = useState([])
     
-    // useEffect(() => {
-    //     const list = categories.map((c) => {
-    //         return (
-    //             <div key={c.id} className="cat-link">
-    //                 <br/>
-    //                 <CategoryLink  key={c.id} category={c}/>
-    //             </div>
-    //         )   
-    //      })
-    //      setCategoriesToRender(list)
-    // }, [categories])
+    
 
     if (loggedIn && user.username !== '' && categories){
+
         const list = categories.map((c) => {
             return (
                 <div key={c.id} className="cat-link">

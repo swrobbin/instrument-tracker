@@ -12,7 +12,7 @@ const InstrumentEditForm = () => {
     useEffect(() => {
             const instrumentToEdit = instruments.find((i) => i.id === parseInt(id))
             setEditedInstrument(instrumentToEdit);
-    }, [instruments, categories, id, editedInstrument])
+    }, [instruments, categories, id])
  
     const handleChange = (e) => {
         if (e.target.name === "categoryName"){

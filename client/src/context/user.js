@@ -37,6 +37,7 @@ const fetchCategories = () => {
     fetch('/categories')
     .then(res => res.json())
     .then(data => {
+        // console.log(data, "cats")
         setCategories(data)
     })
 }
@@ -88,6 +89,8 @@ const addCategory = (newCategory) => {
 
 const login = (user) => {
     setUser(user)
+    fetchCategories()
+    fetchInstruments()
     setLoggedIn(true)
 }
 const logout = () => {
