@@ -34,7 +34,7 @@ const Home = () => {
             <div className="categories">
             <h3 id="home-header">Instrument Categories: </h3>
             <br/>
-                {list}
+                {list.length > 0? list : <h4>There are no instrument categories yet, add some instruments to get started!</h4> }
             </div>
             </div>
             
