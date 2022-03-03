@@ -100,7 +100,8 @@
 }
 #home-login{
   background-color: rgb(34, 47, 52, 0.7);
-  height: 2000px;
+  height: 2200px;
+  /* padding: none; */
 }
 #instrument{
   /* height: 2000px; */
@@ -171,6 +172,7 @@ input[type=text] {
   /* height: 120px; */
   font-family: 'Playfair Display', serif;
   font-size: 5px;
+
 }
 textarea[type=text] {
   width: 40%;
