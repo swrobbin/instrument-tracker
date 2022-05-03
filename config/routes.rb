@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
+
+  # custom routes
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
 
+  # resources gives us RESTful routes
   resources :instruments 
   resources :categories
 

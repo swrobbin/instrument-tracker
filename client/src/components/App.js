@@ -2,15 +2,15 @@ import '../App.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
-import Navbar from './Navbar'
+import Navbar from './Navbar';
 import { UserProvider } from '../context/user';
-import Signup from './Signup' 
+import Signup from './Signup'; 
 import Login from './Login';
 import Instruments from './Instruments'
 import InstrumentForm from './InstrumentForm';
 import Categories from './Categories';
 import Category from './Category';
-import Instrument from './Instrument'
+import Instrument from './Instrument';
 import InstrumentEditForm from './InstrumentEditForm';
 
 
